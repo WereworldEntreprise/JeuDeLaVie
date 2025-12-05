@@ -4,24 +4,22 @@
 int RegleJeuDeLaVie::compterVoisins(const Grille& grille, int x, int y) {
     int compteur = 0;
 
+    int largeur = grille.getLargeur();
+    int hauteur = grille.getHauteur();
 
     for (int ligneVoisin = y - 1; ligneVoisin <= y + 1; ligneVoisin++) {
         for (int colonneVoisin = x - 1; colonneVoisin <= x + 1; colonneVoisin++) {
-
 
             if (ligneVoisin == y && colonneVoisin == x) {
                 continue;
             }
 
 
-            bool dansLaGrille = (colonneVoisin >= 0 && colonneVoisin < grille.getLargeur() &&
-                ligneVoisin >= 0 && ligneVoisin < grille.getHauteur());
+            int colWrap = ((colonneVoisin % largeur) + largeur) % largeur;
+            int rowWrap = ((ligneVoisin % hauteur) + hauteur) % hauteur;
 
-            if (dansLaGrille) {
-
-                if (grille.getCellule(colonneVoisin, ligneVoisin).estVivante()) {
-                    compteur++;
-                }
+            if (grille.getCellule(colWrap, rowWrap).estVivante()) {
+                compteur++;
             }
         }
     }
