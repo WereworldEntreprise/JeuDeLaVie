@@ -30,9 +30,6 @@
     <ClCompile Include="AffichageGraphique.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="AffichageConsole.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Bouton.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -42,7 +39,7 @@
     <ClCompile Include="Regles.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="FichierGrille.cpp">
+    <ClCompile Include="AffichageConsole.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,9 +56,6 @@
     <ClInclude Include="DessinGrille.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="AffichageConsole.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Bouton.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -71,7 +65,7 @@
     <ClInclude Include="Regles.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="FichierGrille.hpp">
+    <ClInclude Include="AffichageConsole.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

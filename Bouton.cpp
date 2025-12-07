@@ -26,6 +26,6 @@ bool Bouton::estClique(const sf::Vector2f& posSouris) const {
            posSouris.y >= pos.y && posSouris.y <= pos.y + size.y;
 }
 
-std::string Bouton::getAction() const {
+std::string Bouton::getAction() const { 
     return action;
 }

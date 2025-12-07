@@ -1,13 +1,12 @@
 #pragma once
 #include "Grille.hpp"
-#include <iostream>
+#include <string>
 
-class ConsoleAffichage {
-private:
-    std::ostream& flux;
-
+class FichierGrille {
 public:
-     ConsoleAffichage(std::ostream& sortie = std::cout);
-    void afficher(const Grille& g, int generation);
-};
 
+    static Grille lireFichier(const std::string& nomFichier);
+
+
+    static void ecrireFichier(const std::string& nomFichier, const Grille& grille);
+};

@@ -129,10 +129,9 @@
   <ItemGroup>
     <ClCompile Include="AffichageGraphique.cpp" />
     <ClCompile Include="Bouton.cpp" />
-    <ClCompile Include="AffichageConsole.cpp" />
     <ClCompile Include="Cellule.cpp" />
     <ClCompile Include="DessinGrille.cpp" />
-    <ClCompile Include="FichierGrille.cpp" />
+    <ClCompile Include="AffichageConsole.cpp" />
     <ClCompile Include="Grille.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Regles.cpp" />
@@ -141,10 +140,9 @@
   <ItemGroup>
     <ClInclude Include="AffichageGraphique.hpp" />
     <ClInclude Include="Bouton.hpp" />
-    <ClInclude Include="AffichageConsole.hpp" />
     <ClInclude Include="Cellule.hpp" />
     <ClInclude Include="DessinGrille.hpp" />
-    <ClInclude Include="FichierGrille.hpp" />
+    <ClInclude Include="AffichageConsole.hpp" />
     <ClInclude Include="Grille.hpp" />
     <ClInclude Include="Regles.hpp" />
     <ClInclude Include="Jeu.hpp" />

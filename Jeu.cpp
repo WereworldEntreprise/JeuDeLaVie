@@ -1,5 +1,5 @@
 #include "Jeu.hpp"
-#include "FichierGrille.hpp"
+#include "AffichageConsole.hpp"
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/System.hpp>

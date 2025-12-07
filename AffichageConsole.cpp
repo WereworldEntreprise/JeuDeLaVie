@@ -1,23 +1,49 @@
 #include "AffichageConsole.hpp"
-#include <iomanip>
-#include <string>
+#include <fstream>
+#include <iostream>
 
-ConsoleAffichage::ConsoleAffichage(std::ostream& sortie)
-    : flux(sortie)
-{
-}
+Grille FichierGrille::lireFichier(const std::string& nomFichier) {
+    std::ifstream fichier(nomFichier);
 
-void ConsoleAffichage::afficher(const Grille& g, int generation)
-{
-    flux << "Generation " << generation << '\n';
-
-    for (int y = 0; y < g.getHauteur(); ++y) {
-        for (int x = 0; x < g.getLargeur(); ++x) {
-            flux << (g.getCellule(x, y).estVivante() ? "â–ˆ" : ".");
-        }
-        flux << '\n';
+    if (!fichier.is_open()) {
+        std::cerr << "Erreur : impossible d'ouvrir le fichier " << nomFichier << "\n";
+        return Grille(0, 0);
     }
 
-    flux << std::string(20, '-') << "\n\n";
+    int largeur, hauteur;
+    fichier >> largeur >> hauteur;
+
+    Grille grille(largeur, hauteur);
+
+    for (int y = 0; y < hauteur; y++) {
+        for (int x = 0; x < largeur; x++) {
+            int valeur;
+            fichier >> valeur;
+            grille.setCellule(x, y, valeur);
+        }
+    }
+
+    fichier.close();
+    return grille;
 }
 
+void FichierGrille::ecrireFichier(const std::string& nomFichier, const Grille& grille) {
+    std::ofstream fichier(nomFichier);
+
+    if (!fichier.is_open()) {
+        std::cerr << "Erreur : impossible de créer le fichier " << nomFichier << "\n";
+        return;
+    }
+
+    fichier << grille.getLargeur() << " " << grille.getHauteur() << "\n";
+
+    for (int y = 0; y < grille.getHauteur(); y++) {
+        for (int x = 0; x < grille.getLargeur(); x++) {
+            fichier << (grille.getCellule(x, y).estVivante() ? 1 : 0) << " ";
+        }
+        fichier << "\n";
+    }
+
+    fichier.close();
+    std::cout << "Grille sauvegardée dans " << nomFichier << "\n";
+}
